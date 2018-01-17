@@ -4,8 +4,8 @@ import javax.swing.ImageIcon;
 import personagens.Jogador;
 
 public class Taverneiro {
-    int input = 0;
-    String nome = "Bill, o Taverneiro";
+    private int input = 0;
+    private final String nome = "Bill, o Taverneiro";
     
     public int dialogoTaverna(Jogador jogador, int cont){
         ImageIcon icon = new ImageIcon("src/imagens/taverneiro2.png");

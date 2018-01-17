@@ -4,11 +4,11 @@ import javax.swing.ImageIcon;
 import personagens.Jogador;
 
 public class Cavaleiro {
-    int input, input1 = 0;
-    String nome = "Zepp, o Cavaleiro";
+    private int input, input1 = 0;
+    private final String nome = "Zepp, o Cavaleiro";
     
-    public int dialogoTaverna(Jogador jogador, int cont_irmao, int cont_cavaleiro){
-        System.out.println("Cont.tavernerio="+cont_irmao);
+    public int dialogoTaverna(Jogador jogador, int cont_I, int cont_C){
+        System.out.println("Cont.tavernerio="+cont_I);
         ImageIcon icon = new ImageIcon("src/imagens/Cavaleiro.png");
         while(input != 2){
         
@@ -18,10 +18,10 @@ public class Cavaleiro {
   
             switch(input){
                 case 0: //Saudações
-                    if(cont_cavaleiro == 0){
-                        if(cont_irmao != 1){
+                    if(cont_C == 0){
+                        if(cont_I != 1){
                             String[] options2 = {"'Estou indo para Dungeon'","voltar"};
-                            input1 = JOptionPane.showOptionDialog(null ,"'Ham... saudações "+jogador.nome +", meu nome é Zepp, sou"
+                            input1 = JOptionPane.showOptionDialog(null ,"'Ham... saudações "+jogador.getNome() +", meu nome é Zepp, sou"
                                 + "\no Capitão da Guarda de Lua Prata, minha terra natal. "
                                 + "\nBem...O que você faz nesse navio?'",
                                 nome, JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, icon, options2, options2[0]);
@@ -66,12 +66,12 @@ public class Cavaleiro {
                     }                    
                     break;
                 case 1://Buscar Informções
-                    if(cont_cavaleiro == 0){
+                    if(cont_C == 0){
                         JOptionPane.showOptionDialog(null ,"'Bem, amanhã de manhã quando o navio chegar a ilha,"
                             + "\n eu o acompanharei até a dungeon... mas ao chagar lá, é cada um por sí..."
                             + "\nNão é nada pessoal mas, é algo que tenho que fazer sozinho.'",
                             nome, JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, icon, null, null);
-                        cont_cavaleiro = 1; //marca se o personagem já teve esse diálogo.
+                        cont_C = 1; //marca se o personagem já teve esse diálogo.
                     }else{
                         JOptionPane.showOptionDialog(null ,"'Amnhã nos encontramos no convés, até.'",
                             nome, JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, icon, null, null);
@@ -81,6 +81,6 @@ public class Cavaleiro {
                     break;
             }
         }
-        return cont_cavaleiro;
+        return cont_C;
     }
 }

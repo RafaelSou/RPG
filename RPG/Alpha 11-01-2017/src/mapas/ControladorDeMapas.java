@@ -1,13 +1,12 @@
 package mapas;
 
-import alpha.Combate2;
+import alpha.Combate;
+import flyweight.FlyFactoryInimigo;
 import interações.Armadilhas;
-import personagens.FabricaDeInimigo;
 import personagens.Jogador;
 
 public class ControladorDeMapas {
-    FabricaDeInimigo NPC = new FabricaDeInimigo();
-    
+   
     public void Entrar(Jogador jogador){
         
         MapaDaTaverna MT = new MapaDaTaverna();
@@ -20,9 +19,9 @@ public class ControladorDeMapas {
         A.Flechas(jogador);
         A.Verme(jogador);
         
-        Combate2 C = new Combate2();
-        C.VS(jogador, NPC.Inimigo3());
-        C.VS(jogador, NPC.Inimigo4());
-        C.VS(jogador, NPC.Inimigo2());       
+        Combate C = new Combate();
+        C.VS(jogador, FlyFactoryInimigo.get("Zunzunzun"));
+        C.VS(jogador, FlyFactoryInimigo.get("Chu"));
+        C.VS(jogador, FlyFactoryInimigo.get("Krute"));       
     }   
 }

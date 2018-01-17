@@ -6,12 +6,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class MapaDaTaverna {
-    int input;
-    int cont_taverneiro, cont_cavaleiro; //cont_taverneiro marca se o dialogo sobre o irmão aconteceu.
-    String lugar = "-Taverna, Bico de Pato-";
+    private int input;
+    private int cont_taverneiro, cont_cavaleiro; //cont_taverneiro marca se o dialogo sobre o irmão aconteceu.
+    private final String lugar = "-Taverna, Bico de Pato-";
     
     public void iniciarTaverna(Jogador jogador){
-        ImageIcon icon = new ImageIcon(jogador.icone);
+        ImageIcon icon = new ImageIcon(jogador.getIcone());
         JOptionPane.showMessageDialog(null, "Devido a uma carta que recebeu de um antigo amigo, contendo relatos "
                 + "\nsobre grandes TESOUROS e PERIGOS em uma certa Dungeon, na Ilha de Belford,"
                 + "\nvocê decidiu partir em uma jornada ao encontro deste amigo. "

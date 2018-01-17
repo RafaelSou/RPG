@@ -1,32 +1,38 @@
 package alpha;
 
-import item.Equipamento;
-import item.FabricaDeEquip;
+import flyweight.FlyFactoryItem;
+import itens.Arma;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 import personagens.Jogador;
 import mapas.ControladorDeMapas;
 
 public class Principal{
-    public static void main(String[] args) {    
-        CriarPersonagem P = new CriarPersonagem(); 
-        Jogador jogador = P.cadastro();
+    public static void main(String[] args) {
+        ImageIcon icon = new ImageIcon("src/imagens/menu.jpg");
+        String[] options = {"START","EXIT"};
+        int input = JOptionPane.showOptionDialog(null,null, "-MENU-",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,icon, options, options[0]);
         
-        FabricaDeEquip F = new FabricaDeEquip();
-
-        jogador.mochila.addEquip(F.item1());
-        jogador.mochila.addEquip(F.item4());
-        jogador.mochila.addEquip(F.item5());
-        jogador.mochila.Imprimir();
+        if(input == 0){
+            CriarPersonagem P = new CriarPersonagem(); 
+            Jogador jogador = P.cadastro();
+        
+            jogador.mochila.addItem(FlyFactoryItem.get("Espada Caveira"));
+            jogador.mochila.addItem(FlyFactoryItem.get("Machado"));
+            jogador.mochila.printList();
          
-        jogador.item = (Equipamento) jogador.mochila.rmvEquip("Machado");
-        jogador.mochila.Imprimir();
+            jogador.item = (Arma) jogador.mochila.rmvItem("Machado");
+            jogador.mochila.printList();
         
-        jogador.mochila.addEquip(F.item3());
-        jogador.mochila.Imprimir();
-       
+            jogador.mochila.addItem(FlyFactoryItem.get("Cetro Necromante"));
+            jogador.mochila.printList();
         
-        ControladorDeMapas M1 = new ControladorDeMapas();
-        M1.Entrar(jogador);
-
+            System.out.println(jogador.item.getClass()); //Retorna a classe
         
+            ControladorDeMapas M1 = new ControladorDeMapas();
+            M1.Entrar(jogador);
+        }  
     }     
 }
