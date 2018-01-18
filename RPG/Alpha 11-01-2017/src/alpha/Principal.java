@@ -4,6 +4,7 @@ import flyweight.FlyFactoryItem;
 import itens.Arma;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import flyweight.FlyFactoryInimigo;
 
 import personagens.Jogador;
 import mapas.ControladorDeMapas;
@@ -18,7 +19,10 @@ public class Principal{
         if(input == 0){
             CriarPersonagem P = new CriarPersonagem(); 
             Jogador jogador = P.cadastro();
-        
+            /*
+            Combate X = new Combate();
+            X.VS(jogador, FlyFactoryInimigo.get("Zunzunzun"));
+            */
             jogador.mochila.addItem(FlyFactoryItem.get("Espada Caveira"));
             jogador.mochila.addItem(FlyFactoryItem.get("Machado"));
             jogador.mochila.printList();

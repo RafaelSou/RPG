@@ -7,6 +7,7 @@ public abstract class Personagem {
     private String nome;
     private String icone;
     private float HP;
+    private float auxHP;
     private float ataque;
     private float defesa; 
     private int agilidade;
@@ -58,6 +59,14 @@ public abstract class Personagem {
 
     public void setHP(float HP) {
         this.HP = HP;
+    }
+    
+    public float getAuxHP() {
+        return auxHP;
+    }
+
+    public void setAuxHP(float auxHP) {
+        this.auxHP = auxHP;
     }
 
     public int getCont_atq() {

@@ -12,9 +12,21 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Marcelo/Desktop/Programação%202/Alpha%2011-01-2017/src/alpha/Mochila.java</file>
-            <file>file:/C:/Users/Marcelo/Desktop/Programação%202/Alpha%2011-01-2017/src/alpha/Combate2.java</file>
-            <file>file:/C:/Users/Marcelo/Desktop/Programação%202/Alpha%2011-01-2017/src/alpha/Principal.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/personagens/Personagem.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/itens/Item.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/alpha/TesteLevelUp.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/flyweight/FlyFactoryItem.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/itens/artefatos/PoçãoCura.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/personagens/inimigos/Krute.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/personagens/inimigos/Chu.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/personagens/Inimigo.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/imagens/taverneiro.png</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/itens/armas/BolinhaDoAmanhã.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/personagens/Jogador.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/personagens/inimigos/Zunzunzun.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/flyweight/FlyFactoryInimigo.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/alpha/Combate.java</file>
+            <file>file:/H:/Programação%202/RPG/Alpha%2011-01-2017/src/interações/Taverneiro.java</file>
         </group>
     </open-files>
 </project-private>

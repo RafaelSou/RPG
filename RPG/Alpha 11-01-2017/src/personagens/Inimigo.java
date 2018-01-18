@@ -1,7 +1,15 @@
 package personagens;
 
 public abstract class Inimigo extends Personagem {
-    
+   private String nomeATQ; 
+
+    public String getNomeATQ() {
+        return nomeATQ;
+    }
+
+    public void setNomeATQ(String nomeATQ) {
+        this.nomeATQ = nomeATQ;
+    }
     
    public void aleatorio(Jogador X){
         int n = (int)(Math.random()*10);
@@ -15,8 +23,8 @@ public abstract class Inimigo extends Personagem {
    @Override
     public void atacar(Personagem X) {
         Jogador Y = (Jogador) X;
-        System.out.println("-"+this.getNome()+" atacou "+Y.getNome()+" com "+this.item.getNome()+"!");
-        Y.setHP(Y.getHP() - (this.getAtaque() + this.item.getAtq())); 
+        System.out.println("-"+this.getNome()+" atacou "+Y.getNome()+" com "+this.getNomeATQ()+"!");
+        Y.setHP(Y.getHP() - this.getAtaque()); 
         this.setCont_atq(1);
         Y.setCont_atq(1);
     }
@@ -29,19 +37,19 @@ public abstract class Inimigo extends Personagem {
         if(Y.getCont_atq() != 0){
             float aux;
             
-            if((this.getDefesa() + this.item.getDef()) > (Y.getAtaque() + Y.item.getAtq())){ //Defesa de X > Defesa de Y
-                aux = (this.getDefesa() + this.item.getDef()) - (Y.getAtaque() + Y.item.getAtq());
+            if(this.getDefesa() > Y.getAtaque()){ //Defesa de X > Defesa de Y
+                aux = (this.getDefesa() - Y.getAtaque());
                 System.out.println("-D>A:"+aux);//FLAG
                 Y.setHP(Y.getHP() - aux);// causa a diferença de dano ao atacante.
-                this.setHP(this.getHP() + (Y.getAtaque() + Y.item.getAtq())); //anula o ataque.
-            }else if((this.getDefesa() + this.item.getDef()) == (Y.getAtaque() + Y.item.getAtq())){ //Defesa de X == Defesa de Y
-                    aux = (this.getDefesa() + this.item.getDef()) - (Y.getAtaque() + Y.item.getAtq());
+                this.setHP(this.getHP() + Y.getAtaque()); //anula o ataque.
+            }else if(this.getDefesa() == Y.getAtaque()){ //Defesa de X == Defesa de Y
+                    aux = (this.getDefesa() - Y.getAtaque());
                     System.out.println("-D=A:"+aux);
-                    this.setHP(this.getHP() + (Y.getAtaque() + Y.item.getAtq())); //anula o ataque.
+                    this.setHP(this.getHP() + Y.getAtaque()); //anula o ataque.
             }else{ //Ataque de Y > Defesa de X
-                aux = (Y.getAtaque() + Y.item.getAtq()) - (this.getDefesa() + this.item.getDef());
+                aux = (Y.getAtaque() - this.getDefesa());
                 System.out.println("-D<A:"+aux);
-                this.setHP(this.getHP() + (Y.getAtaque() + Y.item.getAtq())); // anula o ataque.
+                this.setHP(this.getHP() + Y.getAtaque()); // anula o ataque.
                 this.setHP(this.getHP() - aux); // subtrai a diferença.
             }
             System.out.println("-"+this.getNome()+" defendeu");

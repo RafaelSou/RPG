@@ -5,7 +5,7 @@ import itens.Arma;
 public class EspadaCaveira extends Arma{
     public EspadaCaveira(){
         this.nome="Espada Caveira";
-        this.icon="src/imagens/machado.png";
+        this.icon="src/imagens/espada.png";
         this.atq=12; 
         this.def=4;
         this.BonusAtq=0;

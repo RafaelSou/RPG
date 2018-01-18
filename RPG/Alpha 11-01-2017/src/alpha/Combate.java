@@ -1,5 +1,7 @@
 package alpha;
 
+import alpha.Drop;
+import alpha.TesteLevelUp;
 import itens.Arma;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -18,7 +20,7 @@ public class Combate {
             
         ImageIcon iconInimigo = new ImageIcon(inimigo.getIcone());
         JOptionPane.showMessageDialog(null, jogador.getNome()+" entrou em COMBATE \n"
-            + "contra "+inimigo.getNome()+"!", inimigo.getNome(), 0, iconInimigo);
+            + "contra "+inimigo.getNome()+"\nHP:"+inimigo.getAuxHP()+"\nATQ:"+inimigo.getAtaque()+"\nDEF:"+inimigo.getDefesa(), inimigo.getNome(), 0, iconInimigo);
         
         while(jogador.getHP() > 0 && inimigo.getHP() > 0){ // O loop continua até o HP de um dos dois for menor que zero.
 
@@ -95,6 +97,7 @@ public class Combate {
                 System.out.println("\n[Vida do "+inimigo.getNome()+" = " +inimigo.getHP()+ "]");  
             }
         }
+        
         if(aux_de_fuga == 0){    
             if((jogador.getHP() <= 0) && (inimigo.getHP() <= 0)){
                 System.out.println(jogador.getNome()+" e "+inimigo.getNome()+" morreram em Combate!!!");
@@ -109,7 +112,8 @@ public class Combate {
                 Drop itemD = new Drop();
                 itemD.equiparDrop(jogador, inimigo.item);   
             }else System.out.println("O "+inimigo.getNome()+" Derrotou você!!");
-        }    
+        }
+        inimigo.setHP(inimigo.getAuxHP());
     }
     }
 }

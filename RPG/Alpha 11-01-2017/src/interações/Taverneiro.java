@@ -8,7 +8,7 @@ public class Taverneiro {
     private final String nome = "Bill, o Taverneiro";
     
     public int dialogoTaverna(Jogador jogador, int cont){
-        ImageIcon icon = new ImageIcon("src/imagens/taverneiro2.png");
+        ImageIcon icon = new ImageIcon("src/imagens/taverneiro.png");
         
         while(input != 2){
             String[] options = {"Saudações", "Buscar informação.", "voltar."};

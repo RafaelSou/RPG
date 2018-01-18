@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 public class Jogador extends Personagem{
     public Mochila mochila;
     private int Lv;
-    private float auxHP;
     
     public Jogador() {
         this.Lv = 1;
@@ -76,24 +75,17 @@ public class Jogador extends Personagem{
     public void UP(){
        this.setLv(this.getLv() + 1);
        this.setHP(this.getHP() + 10);
-       this.auxHP += 10;
+       this.setAuxHP(this.getAuxHP() + 10);
        this.setAtaque(this.getAtaque() + 10);
        this.setDefesa(this.getDefesa() + 10);
        this.setAgilidade(this.getAgilidade() + 1);
+       
        ImageIcon icon = new ImageIcon(this.getIcone());
        JOptionPane.showMessageDialog(null, this.getNome()+" upou para o Lv." +this.getLv()
                + "\nHP +10 :" +this.getHP()
                + "\nATAQUE +10 :" +this.getAtaque()
                + "\nDEFESA +10 :" +this.getDefesa()
                + "\nAGILIDADE +1 :" +this.getAgilidade(), this.getNome()+ " Lv." +this.getLv(), 0, icon);
-    }
-    
-    public float getAuxHP() {
-        return auxHP;
-    }
-
-    public void setAuxHP(float auxHP) {
-        this.auxHP = auxHP;
     }
     
     public int getLv() {
